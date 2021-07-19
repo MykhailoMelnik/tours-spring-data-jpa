@@ -1,8 +1,9 @@
 package com.melnik.spring.springboot.controller;
 
-
-import com.melnik.spring.springboot.entity.User;
-import com.melnik.spring.springboot.service.UserService;
+import com.melnik.spring.springboot.model.Tour;
+import com.melnik.spring.springboot.model.User;
+import com.melnik.spring.springboot.service.tours.TourService;
+import com.melnik.spring.springboot.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,22 +11,23 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/")
-public class MyRESTController {
+public class RESTControllerUserLogin {
 
     @Autowired
     private UserService userService;
 
     @GetMapping("/users")
-    public List<User> showAllEmployees() {
-        List<User> users = userService.getAllEmployees();
+    public List<User> showAllUsers() {
+        List<User> users = userService.getAllUsers();
         return users;
     }
 
     @PostMapping("/signin")
     public User saveUser(@RequestBody User user) {
-        userService.saveEmployee(user);
+        userService.saveUser(user);
         return user;
     }
+    
 
 //
 //    @GetMapping("/employees/{id}")

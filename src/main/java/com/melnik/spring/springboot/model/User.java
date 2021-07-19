@@ -1,4 +1,4 @@
-package com.melnik.spring.springboot.entity;
+package com.melnik.spring.springboot.model;
 
 import javax.persistence.*;
 

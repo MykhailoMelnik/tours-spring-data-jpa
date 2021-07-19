@@ -1,8 +1,7 @@
-package com.melnik.spring.springboot.service;
-
+package com.melnik.spring.springboot.service.user;
 
 import com.melnik.spring.springboot.dao.UserRepository;
-import com.melnik.spring.springboot.entity.User;
+import com.melnik.spring.springboot.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +14,12 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public List<User> getAllEmployees() {
+    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
     @Override
-    public void saveEmployee(User user) {
+    public void saveUser(User user) {
         userRepository.save(user);
     }
 
